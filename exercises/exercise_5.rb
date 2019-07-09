@@ -7,4 +7,7 @@ require_relative './exercise_4'
 puts "Exercise 5"
 puts "----------"
 
-# Your code goes here ...
+puts Store.sum(:annual_revenue) / 5
+minimum = 1000000
+rich_stores = Store.where("annual_revenue > ?", minimum)
+puts rich_stores

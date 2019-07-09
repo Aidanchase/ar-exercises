@@ -14,6 +14,7 @@ yaletown = Store.create(name: "Yaletown", annual_revenue: 430000 , mens_apparel:
 
 # @mens_stores.each do |m| puts m.name, m.annual_revenue
 # end
-
-@womens_stores = Store.where(womens_apparel: true && :annual_revenue.size() > 1000000)
+maximum = 1000000
+@womens_stores = Store.where(womens_apparel: true)
+@womens_stores = Store.where("annual_revenue < ?", 1000000)
 puts @womens_stores.count
